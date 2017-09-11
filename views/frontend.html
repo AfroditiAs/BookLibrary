@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	
+  <head>
+    <title>Book...Library</title>
+	<link href="/../css/style.css" rel="stylesheet">
+    <script type='text/javascript'>
+      //------------------SLIDE------------------//
+      function slideLeft(){
+        var currentSlide = $('.active-slide');
+        var nextSlide = currentSlide.next();
+
+        var currentDot = $('.active-dot');
+        var nextDot = currentDot.next();
+
+        if(nextSlide.length === 0) {
+         nextSlide = $('.slide').first();
+         nextDot = $('.dot').first();
+        }
+    
+        currentSlide.fadeOut(600).removeClass('active-slide');
+        nextSlide.fadeIn(600).addClass('active-slide');
+
+        currentDot.removeClass('active-dot');
+        nextDot.addClass('active-dot');
+      }
+      function slideRight(){
+        var currentSlide = $('.active-slide');
+        var prevSlide = currentSlide.prev();
+
+        var currentDot = $('.active-dot');
+        var prevDot = currentDot.prev();
+
+        if(prevSlide.length === 0) {
+          prevSlide = $('.slide').last();
+          prevDot = $('.dot').last();
+        }
+    
+        currentSlide.fadeOut(600).removeClass('active-slide');
+        prevSlide.fadeIn(600).addClass('active-slide');
+
+        currentDot.removeClass('active-dot');
+        prevDot.addClass('active-dot');
+      }
+      </script>
+      
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <script src="https://use.fontawesome.com/6d25878e5b.js"></script>
+</head>
+  <body>
+  
+    <!-- ****HEADER**** -->
+    <header>
+      <a href="index.html" id="logo-icon"></a>
+      <h1 class="logoname">Book...Library</h1>
+    </header>
+    
+    <!-- ****SLIDE**** -->
+    <div class="slide-show">  
+      <div class="slide active-slide">
+        <img src="https://static1.squarespace.com/static/51c9b775e4b0802b17dbbebf/t/55f9a206e4b0e52ef26ead0a/1442423303775/4.jpg?format=1500w" style="width:100%"/>
+      </div>
+      <div class="slide">
+        <img src="http://askaboutfaith.org.uk/images/stories/books.jpg" style="width:100%"/>
+      </div> 
+    </div>
+    <div class="slider-nav">
+      <a class="arrow-prev" onclick="slideLeft()"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+      <ul class="slider-dots">
+        <li class="dot active-dot">&bull;</li>
+        <li class="dot">&bull;</li>
+      </ul>
+      <a class="arrow-next" onclick="slideRight()"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div> 
+    
+
+    <body>
+        <section class="section-on-two">
+      <div class="background">
+        <h3 id="text">Insert new book</h3>
+        <p style="font-size:23px;">Please provide the following:</p>
+            
+            <form method="POST" action="/books" id="addForm">
+                <table style="width:100%;">
+                <tr>
+                    <td class="label">Author:<span style="color:#9c0c0c;">*</span></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="author" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label">Title:<span style="color:#9c0c0c;">*</span></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="title" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Genre:<span style="color:#9c0c0c;">*</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="genre" size="1" id="genre" required>
+                            <option value=""> - Select - </option>
+                            <option value="science">Science fiction</option>
+                            <option value="satire">Satire</option>
+                            <option value="action">Action</option>
+                            <option value="romance">Romance</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="horror" >Horror</option>
+            </select></td>
+                </tr>
+                <tr>
+                    <td class="label">Price:<span style="color:#9c0c0c;">*</span> 
+                </tr>
+                <tr>
+                    <td><input type="number" min="0" step="0.01" name="price" required></td>
+                 </tr>
+                 <tr>
+                    <td>
+                        &nbsp; <input class="btn" type="submit" name="submit" value="Submit">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+        </div>
+        </section>
+            
+        <section class="section-on-two">
+      <div class="background">
+        <h3 id="text">Search book</h3>
+        <p style="font-size:23px;">Give search key:</p>
+        <form style="padding-left:15px;" id="searchForm" method="GET">
+          <input type="search" name="search" required>
+          <br>
+          <input class="btn" type="submit" value="Search"></input>
+        </form>
+      </div>
+    </section>
+
+    
+
+<!-- ****FOOTER**** -->
+    <footer>
+      <section class="footer-section" style="width:50%;margin-left:10%;">
+        <h3><b>Book Library</b></h3>
+        <p>
+        Assimakopoulou Afroditi <br>
+        A.M. 21305 <br>
+        Network Programming and Internet Services</p>
+      </section>
+      <section class="footer-section">
+        <img src="http://blogs.datalogics.com/wp-content/uploads/2016/06/PDFLibrary_298x291.png" style="height:150px;width:175px;margin:15px 0px;"/>
+      </section>
+    </footer>
+    <footer class="second-footer">
+      <p style="font-size:15px;">&copy;Copyright - BookLibrary,2017</p>
+    </footer>
+    <script type="text/javascript" src="/../js/all.js"></script>
+  </body>
+
+    </body>
+</html>
