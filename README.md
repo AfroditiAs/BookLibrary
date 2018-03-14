@@ -1,0 +1,2 @@
+- Username & Password for this project is encrypted.
+- You can change them in order to play or you can preview the project here instead: https://book-library-21305.herokuapp.com/
