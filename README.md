@@ -1,2 +1,3 @@
 - Username & Password for this project is encrypted.
+- Run npm install for node_modules to be created & npm start to run the project.
 - You can change them in order to play or you can preview the project here instead: https://book-library-21305.herokuapp.com/
